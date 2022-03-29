@@ -45,8 +45,8 @@
                             <td>'.$class.'</td>
                             <td>'.$age.'</td>
                             <td>
-                                <button class="btn btn-primary"><a href="update.php?updateId='.$id.'" class="text-decoration-none text-light" ><i class="bi bi-pencil-square"></i></a></button>
-                                <button class="btn btn-primary"><a class="text-decoration-none text-light" href="delete.php?deleteId='.$id.'"><i class="bi bi-trash"></i></a></button>
+                                <a href="update.php?updateId='.$id.'" class="text-decoration-none btn btn-primary text-light" ><i class="bi bi-pencil-square"></i></a>
+                                <a class="btn btn-primary text-decoration-none text-light" href="delete.php?deleteId='.$id.'"><i class="bi bi-trash"></i></a>
                             </td>
                           </tr>
                             ';
