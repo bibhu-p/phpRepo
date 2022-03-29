@@ -1,4 +1,6 @@
-<?php include 'connection.php';?>
+<?php include 'connection.php';
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +16,9 @@
     <div class="container">
     <h2 class="fs-1 text-center">Student CRUD Table</h2>
        <a class="text-decoration-none text-light btn btn-primary mb-5 mt-3" href="add.php">ADD STUDENT</a>
-        <table class="table table-dark">
+        <table class="table table-hover align-middle">
 
-            <thead>
+            <thead class="table-dark"> 
                 <tr>
                 <th scope="col">ID</th>
                 <th scope="col">NAME</th>
@@ -30,6 +32,7 @@
                 <?php 
                     $sql= "select * from studentTable";
                     $result = mysqli_query($conn,$sql);
+                     
                     if ($result) {
                         while($row = mysqli_fetch_assoc($result)){
                             $id = $row['Id'];
@@ -44,12 +47,18 @@
                             <td>'.$roll.'</td>
                             <td>'.$class.'</td>
                             <td>'.$age.'</td>
-                            <td>
+                            <td class= "d-flex align-items-center">
                                 <a href="update.php?updateId='.$id.'" class="text-decoration-none btn btn-primary text-light" ><i class="bi bi-pencil-square"></i></a>
-                                <a class="btn btn-primary text-decoration-none text-light" href="delete.php?deleteId='.$id.'"><i class="bi bi-trash"></i></a>
-                            </td>
+                                <form method="post">
+                                    <button type="submit" name ="submit"  class=" btn btn-primary ms-3"> <i class="bi bi-trash"></i></button>
+                                </form>
+                                
+                                </td>
                           </tr>
                             ';
+                            if(isset($_POST['submit'])){
+                                header('location:delete.php?deleteId='.$id.'');
+                            }
                         }
                     }
                 ?> 
