@@ -13,7 +13,7 @@
 <body>
     <div class="container">
     <h2 class="fs-1 text-center">Student CRUD Table</h2>
-        <button class="btn btn-primary mb-5 mt-3"><a class="text-decoration-none text-light" href="add.php">ADD STUDENT</a></button>
+       <a class="text-decoration-none text-light btn btn-primary mb-5 mt-3" href="add.php">ADD STUDENT</a>
         <table class="table table-dark">
 
             <thead>
